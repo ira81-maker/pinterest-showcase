@@ -236,3 +236,9 @@ h1{font-size:18px; margin:0}
 .newsletter form {
   display: block !important;
 }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
