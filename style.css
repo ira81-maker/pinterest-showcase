@@ -238,7 +238,30 @@ h1{font-size:18px; margin:0}
 }
 
 .truncate {
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  cursor: pointer;
+  position: relative;
+}
+
+/* когато е отворен */
+.truncate.expanded {
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+}
+
+/* показва ... само когато е затворен */
+.truncate::after {
+  content: " ...";
+}
+
+/* маха ... когато е отворен */
+.truncate.expanded::after {
+  content: "";
+}
+.truncate:hover {
+  opacity: 0.85;
 }

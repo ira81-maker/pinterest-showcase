@@ -354,9 +354,21 @@
     </footer>
   </main>
 
+
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  document.querySelectorAll(".truncate").forEach(el => {
+    el.addEventListener("click", () => {
+
+      document.querySelectorAll(".truncate").forEach(t => {
+        if (t !== el) t.classList.remove("expanded");
+      });
+
+      el.classList.toggle("expanded");
+    });
+  });
+</script>
 </body>
 
 </html>
